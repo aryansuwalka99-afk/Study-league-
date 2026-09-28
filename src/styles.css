@@ -1,0 +1,108 @@
+@import "@fontsource-variable/figtree";
+@import "@fontsource-variable/newsreader";
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Figtree Variable", "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Newsreader Variable", "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-background: #11100e;
+  --color-foreground: #f2eee6;
+  --color-card: #1a1916;
+  --color-card-foreground: #f2eee6;
+  --color-popover: #1a1916;
+  --color-popover-foreground: #f2eee6;
+  --color-primary: #c5cdd6;
+  --color-primary-foreground: #11100e;
+  --color-secondary: #22211c;
+  --color-secondary-foreground: #f2eee6;
+  --color-muted: #22211c;
+  --color-muted-foreground: #9a9488;
+  --color-accent: #22211c;
+  --color-accent-foreground: #f2eee6;
+  --color-destructive: #c45c4a;
+  --color-destructive-foreground: #f2eee6;
+  --color-border: #2c2a26;
+  --color-input: #2c2a26;
+  --color-ring: #c5cdd6;
+  --color-good: #7d9a78;
+  --color-good-foreground: #11100e;
+  --color-steel: #c5cdd6;
+  --color-parchment: #f2eee6;
+
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius: 0.75rem;
+
+  --shadow-soft: 0 1px 0 rgb(242 238 230 / 0.04), 0 12px 32px rgb(0 0 0 / 0.28);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 35%, transparent);
+    color: var(--color-foreground);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
